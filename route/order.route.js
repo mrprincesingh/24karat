@@ -7,7 +7,7 @@ const OrderRouter = express.Router();
 OrderRouter.get("/",async(req,res)=>{
     const userId = req.body.userId;
     try {
-        const data  = await OrderModel.find({userId:userId}).populate("userId" , ["name","email","number"])
+        const data  = await OrderModel.find()
         res.send(data)
         
     } catch (error) {

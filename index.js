@@ -20,9 +20,10 @@ app.use(cors())
  app.use("/admin" , adminRoute )
  app.use("/users" , userRouter)
  app.use("/products" , productRouter)
+ app.use("/order" , OrderRouter)
   app.use(check)
 app.use("/cart" ,cartRouter )
-app.use("/order" , OrderRouter)
+
 
 
 app.listen(process.env.PORT , async (req , res)=>{

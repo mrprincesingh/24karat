@@ -40,7 +40,7 @@ adminRoute.post("/login" , async (req, res)=>{
             // result == true
             if(result){
                 let token  = jwt.sign({userID:existingUser[0]._id},"karatadminlogin")
-                res.send({"msg":"Logged in" , "token":token})
+                res.send({"msg":"Logged in" , "token":token ,"email":email })
             }else {
                 res.send({"msg":"Wrong credentials"})
             }

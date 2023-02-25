@@ -24,6 +24,15 @@ OrderRouter.post("/add",async(req,res)=>{
         res.send(error)
     }
 });
+OrderRouter.delete("/delete/:id", async (req, res) => {
+    let id = req.params.id;
+    try {
+        let deleteProducts =    await OrderModel.findByIdAndDelete({ _id: id });
+      res.send("deleted");
+    } catch (e) {
+      res.send(e.message);
+    }
+  });
 
 
 module.exports ={OrderRouter}
